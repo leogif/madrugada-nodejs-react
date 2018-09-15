@@ -19,6 +19,12 @@ class ComponenteDois extends React.Component{
 			comSono: true
 		}
 	}
+
+	getCrushs(){
+		return axios.get('https://crush-management.herokuapp.com/api/crushs')
+		.then(results => console.log(results))
+		.catch(err => console.log(err))
+	}
 	render(){
 		return this.state.comSono ? <h1>com sono de verdade {this.props.Componente}!</h1>:<h1>não tem Sono!</h1>
 	}
